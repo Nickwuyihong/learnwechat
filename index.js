@@ -23,7 +23,13 @@ Page({
     ],
     numberArray: [1, 2, 3, 4],
     condition: true,
-    length: 10
+    length: 10,
+    item:{
+      index: 0,
+      msg: 'this is a template',
+      time: '2018-4-18'
+    }
+    
   },
   //事件处理函数
   bindViewTap: function() {
@@ -92,5 +98,12 @@ Page({
     this.setData({
       numberArray: this.data.numberArray
     })
+  },
+  bindViewTap: function (event) {
+    event.currentTarget.dataset.alphaBeta === 1 // - 会转为驼峰写法
+    event.currentTarget.dataset.alphabeta === 2 // 大写会转为小写
+  },
+  tapName: function (event) {
+    console.log(event)
   }
 })
